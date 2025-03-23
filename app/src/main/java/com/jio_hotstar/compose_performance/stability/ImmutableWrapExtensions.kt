@@ -1,4 +1,4 @@
-@file:OptIn(ExperimentalLifecycleComposeApi::class)
+
 
 package com.jio_hotstar.compose_performance.stability
 
@@ -9,7 +9,6 @@ import androidx.compose.runtime.produceState
 import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleOwner
-import androidx.lifecycle.compose.ExperimentalLifecycleComposeApi
 import androidx.lifecycle.repeatOnLifecycle
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.StateFlow
@@ -21,7 +20,7 @@ import kotlin.coroutines.EmptyCoroutineContext
  * Workaround for passing Collections to Composables to render them stable.
  * Can also be used for 3d party non-stability inferred objects
  */
-@ExperimentalLifecycleComposeApi
+
 @Composable
 fun <T> Flow<T>.collectAsStateWithLifecycleImmutable(
     initialValue: ImmutableWrap<T>,

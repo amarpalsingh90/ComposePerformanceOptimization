@@ -13,12 +13,10 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.lifecycle.compose.ExperimentalLifecycleComposeApi
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.jio_hotstar.compose_performance.common.ColumnWrapper
 import com.jio_hotstar.compose_performance.common.TypicalViewModel
 
-@OptIn(ExperimentalLifecycleComposeApi::class)
 @Composable
 fun StateReadsAnnotationOptimizedScreen(viewModel: TypicalViewModel = hiltViewModel()) {
     val name by viewModel.name.collectAsStateWithLifecycle()

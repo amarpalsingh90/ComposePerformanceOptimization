@@ -53,7 +53,6 @@ fun UnstableLambdaScreen(viewModel: TypicalViewModel = hiltViewModel()) {
         Button(onClick = {
             rememberedOnNameEnteredClick("value passed from ui")
             clearFocus()
-            someTopLvlFunction()
         }) {
             Text(text = "btn with stable lambdas")
         }
@@ -64,6 +63,3 @@ fun UnstableLambdaScreen(viewModel: TypicalViewModel = hiltViewModel()) {
     }
 }
 
-fun someTopLvlFunction() {
-
-}

@@ -7,6 +7,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import androidx.fragment.app.FragmentActivity
+import com.jio_hotstar.compose_performance.stability.UnstableClassScreen
 import com.jio_hotstar.compose_performance.stability.UnstableLambdaScreen
 import com.jio_hotstar.compose_performance.stateReads.inlinedComposables.StateReadsInlinedComposablesScreen
 import com.jio_hotstar.compose_performance.stateReads.inlinedComposables.StateReadsInlinedComposablesSolution2Screen
@@ -27,16 +28,16 @@ class MainActivity : FragmentActivity() {
                 ) {
 
                    //UnstableClassScreen()
-                    //UnstableLambdaScreen()
-//                    UnstableListScreen()
+                    UnstableLambdaScreen()
+                    //UnstableListScreen()
 
                    // StateReadsInlinedComposablesScreen()
-                    StateReadsInlinedComposablesSolution2Screen()
+                    //StateReadsInlinedComposablesSolution2Screen()
 
                     //StateReadsUnoptimizedScreen()
                     //StateReadsLambdasOptimizedScreen()
-//                    StateReadsAnnotationOptimizedScreen()
-//                    StateReadsLowerStateReadsOptimizedScreen()
+                 // StateReadsAnnotationOptimizedScreen()
+                // StateReadsLowerStateReadsOptimizedScreen()
                     //ModifierLambdasScreen()
                 }
             }
