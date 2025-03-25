@@ -6,6 +6,7 @@ import androidx.compose.animation.core.infiniteRepeatable
 import androidx.compose.animation.core.rememberInfiniteTransition
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.ScrollState
+import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -28,8 +29,8 @@ fun ModifierLambdasScreen() {
     val scrollState = rememberScrollState()
     BoxWrapper {
         ScrollingArea(scrollState)
-//        HorizontallyMovingButtonUnoptimized(scrollState.value * 1.5f)
-        HorizontallyMovingButtonOptimized(scrollProvider = { scrollState.value * 1.5f })
+        HorizontallyMovingButtonUnoptimized(scrollState.value * 2.5f)
+        //HorizontallyMovingButtonOptimized(scrollProvider = { scrollState.value * 2.5f })
     }
 }
 
@@ -38,8 +39,8 @@ private fun ScrollingArea(scrollState: ScrollState) {
     Spacer(
         modifier = Modifier
             .fillMaxWidth()
-            .verticalScroll(scrollState)
-            .height(2000.dp)
+            .horizontalScroll(scrollState)
+            .height(1000.dp)
     )
 }
 

@@ -7,8 +7,11 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import androidx.fragment.app.FragmentActivity
+import com.jio_hotstar.compose_performance.rememberusage.DerivedStateVsRemember
 import com.jio_hotstar.compose_performance.stability.UnstableClassScreen
 import com.jio_hotstar.compose_performance.stability.UnstableLambdaScreen
+import com.jio_hotstar.compose_performance.stability.UnstableListScreen
+import com.jio_hotstar.compose_performance.stateReads.ModifierLambdasScreen
 import com.jio_hotstar.compose_performance.stateReads.inlinedComposables.StateReadsInlinedComposablesScreen
 import com.jio_hotstar.compose_performance.stateReads.inlinedComposables.StateReadsInlinedComposablesSolution2Screen
 import com.jio_hotstar.compose_performance.stateReads.stateReads.StateReadsLambdasOptimizedScreen
@@ -28,17 +31,18 @@ class MainActivity : FragmentActivity() {
                 ) {
 
                    //UnstableClassScreen()
-                    UnstableLambdaScreen()
+                    //UnstableLambdaScreen()
                     //UnstableListScreen()
 
-                   // StateReadsInlinedComposablesScreen()
-                    //StateReadsInlinedComposablesSolution2Screen()
+                   //StateReadsInlinedComposablesScreen()
+                   // StateReadsInlinedComposablesSolution2Screen()
 
                     //StateReadsUnoptimizedScreen()
                     //StateReadsLambdasOptimizedScreen()
                  // StateReadsAnnotationOptimizedScreen()
                 // StateReadsLowerStateReadsOptimizedScreen()
                     //ModifierLambdasScreen()
+                    DerivedStateVsRemember()
                 }
             }
         }

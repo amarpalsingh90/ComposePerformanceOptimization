@@ -3,6 +3,7 @@ package com.jio_hotstar.compose_performance.stability
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Button
@@ -29,9 +30,9 @@ class ImmutableListWrapper(val value: List<Int>)
 @Composable
 fun UnstableListScreen(viewModel: TypicalViewModel = hiltViewModel()) {
     var count by remember { mutableStateOf(1) }
-    val items = remember { (0..200).map { it } }
-    val immutableItems = remember { (0..200).map { it }.toImmutableList() }
-    val wrappedItems = remember { ImmutableListWrapper((0..200).map { it }) }
+    val items = remember { (0..5).map { it } }
+    val immutableItems = remember { (10..15).map { it }.toImmutableList() }
+    val wrappedItems = remember { ImmutableListWrapper((16..20).map { it }) }
     val immutableItems2 by viewModel.items.collectAsStateWithLifecycleImmutable()
 
     Column(
@@ -44,9 +45,9 @@ fun UnstableListScreen(viewModel: TypicalViewModel = hiltViewModel()) {
             Text(text = "count ++")
         }
         WrappedLazyColumn(items)
-//        WrappedLazyColumnApproach1(wrappedItems)
-//        WrappedLazyColumnApproach2(immutableItems)
-//        WrappedLazyColumnApproach3(immutableItems2)
+        WrappedLazyColumnApproach1(wrappedItems)
+        WrappedLazyColumnApproach2(immutableItems)
+        WrappedLazyColumnApproach3(immutableItems2)
     }
 }
 
@@ -54,7 +55,7 @@ fun UnstableListScreen(viewModel: TypicalViewModel = hiltViewModel()) {
 @Composable
 private fun WrappedLazyColumn(items: List<Int>) {
     LazyColumn(
-        modifier = Modifier.fillMaxSize(),
+        modifier = Modifier.wrapContentSize(),
         verticalArrangement = Arrangement.spacedBy(8.dp),
     ) {
         items(items = items, key = { item -> item }) { item ->
@@ -67,7 +68,7 @@ private fun WrappedLazyColumn(items: List<Int>) {
 @Composable
 private fun WrappedLazyColumnApproach1(items: ImmutableListWrapper) {
     LazyColumn(
-        modifier = Modifier.fillMaxSize(),
+        modifier = Modifier.wrapContentSize(),
         verticalArrangement = Arrangement.spacedBy(8.dp),
     ) {
         items(items = items.value, key = { item -> item }) { item ->
@@ -80,7 +81,7 @@ private fun WrappedLazyColumnApproach1(items: ImmutableListWrapper) {
 @Composable
 private fun WrappedLazyColumnApproach2(items: ImmutableList<Int>) {
     LazyColumn(
-        modifier = Modifier.fillMaxSize(),
+        modifier = Modifier.wrapContentSize(),
         verticalArrangement = Arrangement.spacedBy(8.dp),
     ) {
         items(items = items, key = { item -> item }) { item ->

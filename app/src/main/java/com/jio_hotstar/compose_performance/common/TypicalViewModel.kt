@@ -17,7 +17,7 @@ class TypicalViewModel @Inject constructor(
 
     //    val user = User(0, "Tor", "false")
     val user = MutableStateFlow(UnstableUser(0, "Tor", false))
-    val items = MutableStateFlow(listOf(1, 2, 3))
+    val items = MutableStateFlow(listOf(100, 200, 300))
 
     fun onNameEntered(input: String) {
         handle["name"] = input
