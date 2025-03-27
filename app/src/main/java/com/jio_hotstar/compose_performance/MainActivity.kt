@@ -14,6 +14,7 @@ import com.jio_hotstar.compose_performance.stability.UnstableListScreen
 import com.jio_hotstar.compose_performance.stateReads.ModifierLambdasScreen
 import com.jio_hotstar.compose_performance.stateReads.inlinedComposables.StateReadsInlinedComposablesScreen
 import com.jio_hotstar.compose_performance.stateReads.inlinedComposables.StateReadsInlinedComposablesSolution2Screen
+import com.jio_hotstar.compose_performance.stateReads.stateReads.StateReadsAnnotationOptimizedScreen
 import com.jio_hotstar.compose_performance.stateReads.stateReads.StateReadsLambdasOptimizedScreen
 import com.jio_hotstar.compose_performance.stateReads.stateReads.StateReadsUnoptimizedScreen
 import com.jio_hotstar.compose_performance.ui.theme.ComposeperformanceTheme
@@ -35,11 +36,11 @@ class MainActivity : FragmentActivity() {
                     //UnstableListScreen()
 
                    //StateReadsInlinedComposablesScreen()
-                   // StateReadsInlinedComposablesSolution2Screen()
+                    //StateReadsInlinedComposablesSolution2Screen()
 
                     //StateReadsUnoptimizedScreen()
                     //StateReadsLambdasOptimizedScreen()
-                 // StateReadsAnnotationOptimizedScreen()
+                  //StateReadsAnnotationOptimizedScreen()
                 // StateReadsLowerStateReadsOptimizedScreen()
                     //ModifierLambdasScreen()
                     DerivedStateVsRemember()

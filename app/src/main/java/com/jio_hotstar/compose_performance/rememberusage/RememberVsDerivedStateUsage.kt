@@ -18,6 +18,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.derivedStateOf
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
@@ -71,17 +72,17 @@ fun ScrollToTopButton(
 ) {
     val scope = rememberCoroutineScope()
 
-    val showScrollToTopButton = remember(isEnabled) {
+    val showScrollToTopButton by remember(isEnabled) {
         derivedStateOf {
             state.firstVisibleItemIndex >= 5 && isEnabled
         }
     }
-
-   /* val showScrollToTopButton = remember(state.firstVisibleItemIndex) {
+/*
+    val showScrollToTopButton = remember(state.firstVisibleItemIndex) {
         state.firstVisibleItemIndex >= 5
     }*/
 
-    if(showScrollToTopButton.value) {
+    if(showScrollToTopButton) {
         FloatingActionButton(onClick = {
             scope.launch {
                 state.animateScrollToItem(0)
